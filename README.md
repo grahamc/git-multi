@@ -1,4 +1,4 @@
-# `git multi`
+# git multi
 
 `git multi` aims to provide a simple interface for interacting with multiple
 repositories in a single directory.
