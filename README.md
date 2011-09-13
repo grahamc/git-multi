@@ -49,7 +49,7 @@ the git commands.
 git multi work grahamc
 ```
 
-That command drops you in to a bash shell with $GIT_WORK_TREE and $GIT_DIR
+That command drops you in to a bash shell with **$GIT_WORK_TREE** and **$GIT_DIR**
 set to the proper directory.
 
 Running `git status` will show you everything you need to know. `git commit`
