@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -n "$1" ]; then
+    echo "Must pass name.";
+    exit 1;
+fi
+
+git multi run "$1" "bash"

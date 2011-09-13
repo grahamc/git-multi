@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ ! -n "$1" ]; then
+    echo "Oops! Pass a name.";
+    exit 1;
+fi
+
+if [ ! -n "$2" ]; then
+    echo "Oops! Pass a repository.";
+    exit 1;
+fi
+
+set -e
+
+mkdir -p .git-multi
+
+git clone --bare "$2" ".git-multi/${1}"
+
+git config -f ".git-multi/${1}/config" core.bare false
+git config -f ".git-multi/${1}/config" core.worktree "../../"
+
+mkdir -p ".git-multi/${1}/info"
+echo ".git-multi/" >> .git-multi/${1}/info/exclude
+
+git multi run "${1}" "git checkout"
