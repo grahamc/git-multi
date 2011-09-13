@@ -5,10 +5,11 @@ if [ ! -n "$1" ]; then
     exit 1;
 fi
 
-echo ".git-multi" > ".git-multi/${1}/info/exclude";
+MPWD=`pwd`;
+echo ".git-multi" > "${MPWD}/.git-multi/${1}/info/exclude";
 for i in `ls .git-multi/ | grep -v "${1}"`;
 do
-    GIT_WORK_TREE="." GIT_DIR=".git-multi/${i}" git ls-files >> ".git-multi/${1}/info/exclude";
+    GIT_WORK_TREE=$MPWD GIT_DIR="${MPWD}/.git-multi/${i}" git ls-files >> "${MPWD}/.git-multi/${1}/info/exclude";
 done
 
-GIT_WORK_TREE="." GIT_DIR=".git-multi/${1}" $2;
+GIT_WORK_TREE=$MPWD GIT_DIR="${MPWD}/.git-multi/${1}" $2;
