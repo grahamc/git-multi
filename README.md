@@ -7,8 +7,8 @@ repositories in a single directory.
 Because I am a sick, sick man. Get me help.
 
 Also:
-I maintain two repositories in my ~ for dotfiles. You can see one at
-grahamc/dotfiles.
+I maintain two repositories in my `~` for dotfiles. You can see one at
+https://github.com/grahamc/dotfiles .
 
 The other one is sup3r s3cr3t and contains things like pgp and ssh keys, IPs
 of internal servers, and a list of my victims. That one is tucked away into a
@@ -57,6 +57,6 @@ Running `git status` will show you everything you need to know. `git commit`
 #### Hey! Why doesn't $repoA show $repoB files as un-tracked?
 Becauase when you do `git multi work` (or `git multi run`, which is like the
 plumbing of this command) we automatically iterate over your other repositories
-and fill out $repoA's info/exclude file with the files other repositories track.
+and fill out $repoA's `info/exclude` file with the files other repositories track.
 
 Because we're nice.
