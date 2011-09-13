@@ -8,7 +8,8 @@ Because I am a sick, sick man. Get me help.
 
 Also:
 I maintain two repositories in my `~` for dotfiles. You can see one at
-https://github.com/grahamc/dotfiles .
+https://github.com/grahamc/dotfiles. **It is worth noting that `git multi`
+will work in any directory, it isn't specific to your home directory.**
 
 The other one is sup3r s3cr3t and contains things like pgp and ssh keys, IPs
 of internal servers, and a list of my victims. That one is tucked away into a
