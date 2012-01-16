@@ -5,4 +5,4 @@ if [ ! -n "$1" ]; then
     exit 1;
 fi
 
-git multi run "$1" "bash"
+git multi run "$1" "$SHELL"
