@@ -1,22 +1,47 @@
-#!/bin/bash
+#!/usr/bin/python
 
-if [ ! -n "$1" ]; then
-    echo "Pass the multi command."
-    exit 1
-fi
+import sys, subprocess
 
-case "$1" in
-    add*)
-        git-multi-add "$2" "$3"
-    ;;
-    work*)
-        git-multi-work "$2"
-    ;;
-    run*)
-        git-multi-run "$2" "$3"
-    ;;
-    *)
-        echo "Pass the multi command."
-        exit 1
-    ;;
-esac
+def help(message = None):
+    if message is not None:
+        print message
+    print """
+Add a new repository to Git Multi:
+`git multi add shortname git_uri`
+
+Switch to work on a repoisitory managed by `git-multi`:
+`git multi work shortname`
+
+View this help screen:
+`git multi` or `git multi help`
+
+PLUMBING:
+Run a command as if it were being run inside a Git reposistory:
+`git multi run shortname "git status"`
+
+"""
+    if message is not None:
+        sys.exit(1)
+    else:
+        sys.exit(0)
+
+def run_command(script, suffix, arguments):
+    valid_commands = ['work', 'run', 'add']
+    try:
+        valid_commands.index(suffix)
+    except ValueError:
+        help("%s is not a valid git-multi command." % suffix)
+
+    cmd = '%s-%s' % (script, suffix)
+    arguments.insert(0, cmd)
+    sys.exit(subprocess.call(arguments))
+
+if len(sys.argv) == 1:
+    help()
+
+args = sys.argv
+script_name = args.pop(0)
+sub_script = args.pop(0)
+
+run_command(script_name, sub_script, sys.argv)
+
