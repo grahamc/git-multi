@@ -22,4 +22,4 @@ git config -f ".git-multi/${1}/config" core.worktree "../../"
 mkdir -p ".git-multi/${1}/info"
 echo ".git-multi/" >> .git-multi/${1}/info/exclude
 
-git multi run "${1}" "git checkout"
+git multi run "${1}" git checkout

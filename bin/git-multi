@@ -5,15 +5,18 @@ if [ ! -n "$1" ]; then
     exit 1
 fi
 
-case "$1" in
+command=$1
+shift
+
+case "$command" in
     add*)
-        git-multi-add "$2" "$3"
+        git-multi-add "$@"
     ;;
     work*)
-        git-multi-work "$2"
+        git-multi-work "$@"
     ;;
     run*)
-        git-multi-run "$2" "$3"
+        git-multi-run "$@"
     ;;
     *)
         echo "Pass the multi command."
