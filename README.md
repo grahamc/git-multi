@@ -1,5 +1,7 @@
 # git multi
 
+**THIS IS A THOUGHT EXPERIMENT. DO NOT USE IT. UNSAFE. YOU COULD DIE.**
+
 `git multi` aims to provide a simple interface for interacting with multiple
 repositories in a single directory.
 
