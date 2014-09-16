@@ -58,7 +58,7 @@ Running `git status` will show you everything you need to know. `git commit`
 `push` `pull` and whatever you like to your hearts content.
 
 #### Hey! Why doesn't $repoA show $repoB files as un-tracked?
-Becauase when you do `git multi work` (or `git multi run`, which is like the
+Because when you do `git multi work` (or `git multi run`, which is like the
 plumbing of this command) we automatically iterate over your other repositories
 and fill out $repoA's `info/exclude` file with the files other repositories track.
 
